@@ -15,7 +15,6 @@ const Wrapper = styled(motion.div)`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background-color: tomato;
 `;
 
 const Circle = styled(motion.div)`
@@ -115,12 +114,13 @@ function App() {
   );
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 5]);
+
   const [id, setId] = useState<null | number>(null);
 
   return (
     <Wrapper style={{ background: gradient }}>
       <Grid>
-        {[1, 2, 3, 4].map((n) => (
+        {[1, 2, 3, 4, 5].map((n) => (
           <Box onClick={() => setId(n)} key={n} layoutId={n + ""} />
         ))}
       </Grid>
